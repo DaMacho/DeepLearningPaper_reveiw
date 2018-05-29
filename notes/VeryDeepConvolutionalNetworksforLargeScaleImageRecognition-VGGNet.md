@@ -10,7 +10,7 @@ Review: VGGNet은 구조가 간단하며 이해나 변형이 쉬운 장점을 �
 
 <!--more-->
 - References
-        - Simonyan, Karen, and Andrew Zisserman. "Very deep convolutional networks for large-scale image recognition." (2014). [[pdf]](https://arxiv.org/pdf/1409.1556.pdf)
+    - Simonyan, Karen, and Andrew Zisserman. "Very deep convolutional networks for large-scale image recognition." (2014). [[pdf]](https://arxiv.org/pdf/1409.1556.pdf)
 
 ## Abstract
 - 주요 연구 목적은 망의 깊이(depth)가 정확도에 미치는 영향력이다.
@@ -19,8 +19,8 @@ Review: VGGNet은 구조가 간단하며 이해나 변형이 쉬운 장점을 �
 
 ## 1. Introduction
 - Convolutional networks (ConvNets)가 이미지와 영상 인지에서 큰 성과를 보여줌. 
-        - 예시 1) ILSVRC2013에서 ZFNet은 첫번째 convolutional layer에서 AlexNet보다 작은 filter(window) size와 stride 사이즈를 적용하여 성능향상. (Zeiler & Fergus, 2013; Sermanet et al., 2014).
-        - 예시 2) (Sermanet et al., 2014; Howard, 2014)에서 training과 testing에서의 scale 조정, data augmentation 등이 연구됨.
+    - 예시 1) ILSVRC2013에서 ZFNet은 첫번째 convolutional layer에서 AlexNet보다 작은 filter(window) size와 stride 사이즈를 적용하여 성능향상. (Zeiler & Fergus, 2013; Sermanet et al., 2014).
+    - 예시 2) (Sermanet et al., 2014; Howard, 2014)에서 training과 testing에서의 scale 조정, data augmentation 등이 연구됨.
 - 본 연구에서는 3x3 convolution filster를 활용하여 망의 깊이(depth)에 집중함.
 - 결과적으로, ImageNet 챌린지뿐 아니라 다른 데이터셋에서도 좋은 성과를 보임. 
 
@@ -41,11 +41,11 @@ Review: VGGNet은 구조가 간단하며 이해나 변형이 쉬운 장점을 �
 
 ### 2.2. Configurations
 - A부터 E까지 총 6가지 구성으로 나뉜다. ([Table 1] 참고)
-        - layers의 수와 1x1 conv. layer의 추가 등에 따라 조금씨 다름.
+    - layers의 수와 1x1 conv. layer의 추가 등에 따라 조금씨 다름.
 
 ### 2.3. Discussion
 - 이전의 연구들이 상대적으로 큰 필터를 사용한 것에 비해, 본 연구는 3x3의 매우 작은 필터와 stride 1을 적용함. 
-        - 3x3 필터 2개로 5x5 필터의 효과, 3x3 필터 3개로 7x7 필터의 효과를 보며, 오히려 파라미터는 더 적게 사용됨(비용이 작음). (9+9 < 25, 9+9+9 < 49)
+    - 3x3 필터 2개로 5x5 필터의 효과, 3x3 필터 3개로 7x7 필터의 효과를 보며, 오히려 파라미터는 더 적게 사용됨(비용이 작음). (9+9 < 25, 9+9+9 < 49)
 - 1x1 conv. filter를 적용하여, 차원을 유지하며 ReLU를 통한 추가적인 non-linearity 확보.
 
 ## 3. Classification Framework    
@@ -53,9 +53,9 @@ training과 evaluation에 관한 설명.
 
 ### 3.1. Training
 - optimizer에는, mini-batch gradient descent(SGD)와 momentum(모멘텀) 적용.
-        - batch size = 256, momentum = 0.9
+    - batch size = 256, momentum = 0.9
 - regularisation에는, L2 패널티와 dropout 적용.
-        - dropout은 0.5로 1st 2nd FC에 적용.
+    - dropout은 0.5로 1st 2nd FC에 적용.
 - learning rate = $$10^{-2}$$, 정확도가 향상되지 않을 경우 학습도가 감소하게 설정.
 - Deep net은 학습할 때 vanishing/exploding gradient 문제로 학습이 어려워질 수 있는데, 이것을 먼저 11-layer의 비교적 간단한 구조(A)를 학습시킨 후, 더 깊은 나머지 구조를 학습할 때는 처음 4 layer와 마지막 3개 FC를 구조-A의 학습결과로 초기화 시킨 후 학습을 진행하여 해결하였다.
 
@@ -63,8 +63,8 @@ training과 evaluation에 관한 설명.
 - data augmentation기법을 적용함.
 - 예시) AlexNet, 학습 이미지를 256x256 크기로 만든 후, 무작위로 224x224 크기의 이미지로 잘라서 취함.
 - training scale로 single-scale training과 multi-scaling training 지원.
-        - single-scale에서는 256x256 고정과, 256x256과 384x384를 지원하는 두가지 scale 지원.
-        - multi-scale에서는 min = 256, max = 512로 하여, 256과 512범위에서 무작위로 scale을 정할 수 있게 함. 384로 미리 학습시킨 후 무작위로 선택하며 fine tuning을 함. scale jittering이라고 함.
+    - single-scale에서는 256x256 고정과, 256x256과 384x384를 지원하는 두가지 scale 지원.
+    - multi-scale에서는 min = 256, max = 512로 하여, 256과 512범위에서 무작위로 scale을 정할 수 있게 함. 384로 미리 학습시킨 후 무작위로 선택하며 fine tuning을 함. scale jittering이라고 함.
 - 이후 224x224 크기를 선택하여 취함(AlexNet과 동일).
 
 ### 3.2. Testing
@@ -79,16 +79,16 @@ training과 evaluation에 관한 설명.
 ## 4. Classification Experiments    
 **Dataset**   
 - ILSVRC-2012 dataset을 사용.
-        - 1000 class
-        - sets: training(1.3M images), validation(50k images), testing(100k images with held-out class labels).
-        - evaluating measures: the top-1 and top-5 error.
+    - 1000 class
+    - sets: training(1.3M images), validation(50k images), testing(100k images with held-out class labels).
+    - evaluating measures: the top-1 and top-5 error.
 
 ### 4.1. Single Scale Evaluation
 - [Table 3] 참고
 - 망이 깊을수록 결과가 좋아지고, 학습에 scale jittering을 적용한 경우에 결과가 더 좋았다.
 - B구조에 3x3 conv. layer 2개를 곂쳐서 사용한 경우와 5x5 conv. layer를 1개 사용하는 모델을 만들어 비교함.
-        - 3x3 conv. layer 2개인 모델이 결과가 더 좋았다. 
-        - 망을 깊게 만들고, 파라미터의 크기를 줄이고, 뉴런에 있는 non-linearity 활성함수를 통해 feature 추출 특성이 좋아졌음을 반증함.
+    - 3x3 conv. layer 2개인 모델이 결과가 더 좋았다. 
+    - 망을 깊게 만들고, 파라미터의 크기를 줄이고, 뉴런에 있는 non-linearity 활성함수를 통해 feature 추출 특성이 좋아졌음을 반증함.
 
 ### 4.2. Multi-Scale Evaluation
 - [Table 4] 참고
