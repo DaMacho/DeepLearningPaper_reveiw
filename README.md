@@ -1,5 +1,5 @@
 # DeepLearningPaper\_review
 
 ## ImageNet Classification
-- [VGGNet](DeepLearningPaper_review/notes/DeepResidualLearningforImageRecognition-ResNet.md)
-- [ResNet](DeepLearningPaper_review/notes/DeepResidualLearningforImageRecognition-ResNet.md)
+- [VGGNet(2014)](https://github.com/DaMacho/DeepLearningPaper_review/blob/master/notes/VeryDeepConvolutionalNetworksforLargeScaleImageRecognition-VGGNet.md)
+- [ResNet(2015)](https://github.com/DaMacho/DeepLearningPaper_review/blob/master/notes/DeepResidualLearningforImageRecognition-ResNet.md)
