@@ -1,6 +1,13 @@
+---
+layout: post
+title: ResNet Paper Review
+tags: [Paper_Review]
+excerpt_separator: <!--more-->
+---  
 # ResNet: Deep Residual Learning for Image Recognition
 - References
-	- He, Kaiming, et al. "Deep Residual Learning for Image Recognition." (2015). [pdf]
+	- He, Kaiming, et al. "Deep residual learning for image recognition." (2015). [[pdf]](https://arxiv.org/pdf/1512.03385.pdf)
+<!--more-->
 
 ## Abstract
 - ...
