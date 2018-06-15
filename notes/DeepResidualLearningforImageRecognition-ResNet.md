@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ResNet Paper Review
+title: "Deep Residual Learning for Image Recognition", ResNet (2015)
 tags: [Paper_Review]
 excerpt_separator: <!--more-->
 ---  
