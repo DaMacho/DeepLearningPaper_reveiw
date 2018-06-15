@@ -1,6 +1,6 @@
 ---
 layout: post
-title: [Paper_Review] "Improving neural networks by preventing co-adaptation of feature detectors", Dropout (2012)
+title: "Improving neural networks by preventing co-adaptation of feature detectors", Dropout (2012)
 tags: [Paper_Review]
 excerpt_separator: <!--more-->
 ---  

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: [Paper_Review] "Very deep convolutional networks for large-scale image recognition", VGGNet (2014)
+title: "Very deep convolutional networks for large-scale image recognition", VGGNet (2014)
 tags: [Paper_Review]
 excerpt_separator: <!--more-->
 ---    
